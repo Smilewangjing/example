@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>编号的嵌套</title>
+	<style type="text/css">
+		h1{
+			counter-increment:mycounter;
+			counter-reset: mycounter2;
+		}
+		h1:before{
+			content:counter(mycounter);
+		}
+		h2{
+			counter-increment: mycounter2;
+			counter-reset: mycounter3;
+		}
+		h2:before{
+			content:counter(mycounter)"-"counter(mycounter2);
+		}
+		h3{
+			counter-increment: mycounter3;
+		}
+		h3:before{
+			content: counter(mycounter)'-'counter(mycounter2)'-'counter(mycounter3);
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h1>大标题</h1>
+		<h2>one</h2>
+		<h3>two</h3>
+		<h3>two</h3>
+		<h1>大标题</h1>
+		<h2>one</h2>
+		<h3>two</h3>
+		<h3>two</h3>
+		<h1>大标题</h1>
+		<h2>one</h2>
+		<h3>two</h3>
+		<h3>two</h3>
+		<h1>大标题</h1>
+		<h2>one</h2>
+		<h3>two</h3>
+		<h3>two</h3>
+	</div>
+</body>
+</html>

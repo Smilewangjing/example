@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var str="aaaaaadfdgg";
+		function string(str){
+			var obj={};
+			for(var i=0;i<str.length;i++){
+				var k=str[i];
+				if(!obj[k]){
+					obj[k]=1;
+				}else{
+					obj[k]++;
+				}
+			}
+			var num=0;
+			var number=0;
+			for(var key in obj){
+				if(obj[key]>num){
+					number=obj[key];
+					num=key;
+				}
+			}
+			  alert('出现最多的值是'+num+'出现最多的次数是'+number);//打印结果
+		}
+		string(str);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

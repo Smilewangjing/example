@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>数组</title>
+	<script type="text/javascript">
+		function parseQueryString(string){
+			var c= string.split("?");
+			var d=c[1].split("&");
+			var obj={};
+			d.forEach(function(item){
+				console.log(item);
+				var f=item.split("=");
+				console.log(f);
+				obj[f[0]]=f[1];
+			})
+			console.log(obj);
+		}
+		var url="http://?key0=zhang&key1=22&key2=man"
+		var a=parseQueryString(url);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

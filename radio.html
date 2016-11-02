@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="" onsubmit="return fun()">
+		<input type="radio" name="gender" value="1">
+		<input type="radio" name="gender" value="2">
+		<input type="radio" name="gender" value="3">
+		<input type="submit">
+	</form>
+	<script type="text/javascript">
+		function fun(){
+			var input=document.getElementsByTagName('input');
+			var arr=[];
+				for(var i=0;i<input.length;i++){
+				if(input[i].checked){
+					arr.push(input[i].value);
+				}
+			}
+			if(arr.length==1){
+				alert(arr[0]);
+			}else{
+				alert("请选择");
+			}
+			return false;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function(){
+		var btn=document.getElementsByTagName("button");
+		for(var i=0;i<btn.length;i++){
+			btn[i].onclick=(function(num){
+				return function(){
+				alert(num);
+				}
+			})(i);
+		}
+	}
+	</script>
+</head>
+<body>
+	<button>第一个</button>
+	<button>第二个</button>
+	<button>第三个</button>
+</body>
+</html>

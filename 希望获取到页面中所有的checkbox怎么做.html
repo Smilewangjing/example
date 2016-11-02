@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			function num(){
+				var checkbox=document.getElementsByTagName("input");
+				var arr=[]
+				for(var i=0;i<checkbox.length;i++){
+					if(checkbox[i].type=="checkbox"){
+						arr.push(checkbox[i]);
+					}
+				}
+				return arr;
+			}
+			var arr=num();
+			console.log(arr);
+		}
+	</script>
+</head>
+<body>
+	<input type="checkbox" name="hobby">篮球
+	<input type="checkbox" name="hobby">篮球
+	<input type="checkbox" name="hobby">篮球
+	<input type="checkbox" name="hobby">篮球
+	<input type="checkbox" name="hobby">篮球
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		img{
+			width: 300px;
+			height: 200px;
+			display:none;
+		}
+		.content{
+			width: 300px;
+			height: 200px;
+			border: 1px solid #000;
+			margin: 0 auto;
+			position: relative;
+		}
+		ul{
+			position: absolute;
+			left:50px;
+			top:150px;
+		}
+		ul>li{
+			list-style-type: none;
+			float: left;
+			background: #ccc;
+			margin-left: 10px;
+			padding:0 5px;
+			border-radius: 10px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var img=document.getElementsByTagName("img");
+			var lis=document.getElementsByTagName("li");
+			for(var i=0;i<lis.length;i++){
+				lis[i].index=i;
+				lis[i].onmouseover=function(){
+					for(var i=0;i<lis.length;i++){//先清空所有的样式
+		　　　　　　　　lis[i].style.color='';
+		　　　	　　　　img[i].style.display='none';
+	　　　　　　	}
+		　　　　　	this.style.color="#fff";
+	　　　　　　	img[this.index].style.display='block';
+					_index=this.index;
+					if(_index>2){
+						_index=-1
+					}
+					clearInterval(timer);
+				}
+				lis[i].onmouseout=function(){
+					timer=setInterval(auto,1000)
+				}
+			}
+			function InitMove(index){
+                for(var i=0;i<img.length;i++){
+                    img[i].style.display='none';
+					lis[i].style.color='';
+                }
+                img[index].style.display='block';
+				lis[index].style.color='#fff';
+            }
+            var timer=null;
+			var _index=0;
+			timer=setInterval(auto,1000)
+			function auto(){
+				_index++;
+				InitMove(_index);
+				if(_index>2){
+					_index=-1
+				}
+				
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="content">
+		<img src="../js1/images/1.jpg"/ style="display:block">
+		<img src="../js1/images/2.jpg"/>
+		<img src="../js1/images/3.jpg"/>
+		<img src="../js1/images/4.jpg"/>
+		<ul>
+			<li style="color:#fff">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+</body>
+</html>
